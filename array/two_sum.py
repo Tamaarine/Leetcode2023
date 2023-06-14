@@ -20,8 +20,23 @@ class Solution2:
                 return [index, nums.index(needed)]
             c[nums[index]] += 1
                 
+class Solution3:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # Much more elegant solution is just to look forward.
+        # Keep an running empty dictionary. If the element
+        # is part of the sum, don't worry you will be able to catch
+        # it at the second number. Just put it in and then rememebr the index
+        # Then in the for loop, just search for the needed, that's it.
+        # No need to keep all of them in it at once
+        dict = {}
+        for i, num in enumerate(nums):
+            if target - num in dict:
+                return [i, dict[target - num]]
+            dict[num] = i
 
-s = Solution2()
+                
+
+s = Solution3()
 print(s.twoSum([1, 2, 3, 4, 5, 6, 7, 8], 10))
 print(s.twoSum([2,7,11,15], 9))
 print(s.twoSum([3, 2, 4], 6))
