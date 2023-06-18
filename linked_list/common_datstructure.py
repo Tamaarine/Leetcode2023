@@ -35,4 +35,12 @@ def initialize_list(nums):
         curr = to_add
     return dummy.next
 
+def middle_list(list):
+    slow = list
+    fast = list
     
+    while fast != None and fast.next != None:
+        slow = slow.next
+        fast = fast.next.next
+    return slow
+
