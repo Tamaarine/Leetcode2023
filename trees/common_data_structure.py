@@ -25,6 +25,16 @@ def postorder(root : TreeNode):
         postorder(root.right)
         print(root.val)
 
+def initialize_tree_recursive_non_full(nums: List[int], currIndex, n):
+    if currIndex >= n or nums[currIndex] == None:
+        return None
+    
+    root = TreeNode(nums[currIndex])
+    root.left = initialize_tree_recursive_non_full(nums, 2*currIndex + 1, n)
+    root.right = initialize_tree_recursive_non_full(nums, 2*currIndex + 2, n)
+    
+    return root
+
 def initialize_tree_recursive(nums: List[int], currIndex, n):
     if currIndex >= n:
         return None
@@ -60,7 +70,3 @@ def initialize_tree(nums : List[int]):
             i += 1
             queue.append(right_node)
     return root
-
-list = [1, 2, 3, 4, 5]
-root = initialize_tree_recursive(list, 0, len(list))
-postorder(root)
