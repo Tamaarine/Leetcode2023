@@ -17,9 +17,9 @@ class Solution:
 
 s = Solution()
 input1 = [1, 2, 2, 3, 3, None, None, 4, 4]
-tree = initialize_tree_recursive_non_full(input1, 0, len(input1))
+tree = initialize_tree_non_full(input1, 0, len(input1))
 print(s.isBalanced(tree))
 
 input1 = [1,2,2,3,None,None,3,4,None,None,4]
-tree = initialize_tree_recursive_non_full(input1, 0, len(input1))
+tree = initialize_tree_non_full(input1, 0, len(input1))
 print(s.isBalanced(tree))
