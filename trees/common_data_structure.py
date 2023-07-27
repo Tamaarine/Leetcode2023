@@ -6,6 +6,10 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
+    def __str__(self):
+        return f"{self.val}"
+    def __repr__(self):
+        return self.__str__()
 
 def inorder(root : TreeNode):
     if root != None:
