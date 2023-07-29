@@ -43,14 +43,14 @@ def initialize_tree_non_full(nums: List[int]):
         node = queue.popleft()
         if i < len(nums):
             left = nums[i]
-            if left:
+            if left is not None:
                 left_node = TreeNode(left)
                 node.left = left_node
                 queue.append(left_node)
             i += 1
         if i < len(nums):
             right = nums[i]
-            if right:
+            if right is not None:
                 right_node = TreeNode(right)
                 node.right = right_node
                 queue.append(right_node)
